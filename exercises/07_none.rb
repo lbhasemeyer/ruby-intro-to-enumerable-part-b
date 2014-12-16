@@ -1,3 +1,15 @@
+def none?(items, &block)
+  result = true
+  items.each do |item|
+    if item.is_a? Numeric
+      result = false if block.call(item)
+    else
+      result = false if item.nil? || item.empty?
+    end
+  end
+  result
+end
+
 
 
 # ------ code above this line ------

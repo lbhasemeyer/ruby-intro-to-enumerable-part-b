@@ -1,3 +1,13 @@
+def find(hashes, &block)
+  result = nil
+    hashes.each do |hash|
+      if block.call(hash)
+        result = hash
+      end
+    end
+  result
+end
+
 
 
 # ------ code above this line ------

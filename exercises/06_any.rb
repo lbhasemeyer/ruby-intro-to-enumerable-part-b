@@ -1,4 +1,14 @@
-
+def any?(items, &block)
+  result = false
+    items.each do |item|
+      if item.is_a? Numeric
+        result = true if item == 0
+      else
+        result = true if item.nil? || item.empty?
+      end
+    end
+  result
+end
 
 # ------ code above this line ------
 
