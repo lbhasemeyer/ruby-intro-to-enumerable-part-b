@@ -1,5 +1,20 @@
 def max_by(items, &block)
+  result = nil
+  items.each do |item|
+    if result.nil?
+      result = item
+    end
+    if item.is_a? Numeric
+      result = item if block.call(item) > result
+    else
+      result = item if block.call(item) > result.length
+    end
+  end
+  result
 end
+
+
+
 
 # ------ code above this line ------
 
